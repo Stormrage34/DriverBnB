@@ -41,7 +41,16 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable}`} suppressHydrationWarning>
+    <html
+      lang="en"
+      className={`${GeistSans.variable} ${GeistMono.variable}`}
+      data-type="software"
+      data-radius="soft"
+      data-buttons="pill"
+      data-ground="sand"
+      data-motion=""
+      suppressHydrationWarning
+    >
       <head>
         {/*
          * Runs during HTML parsing, before first paint, so the stored theme is
