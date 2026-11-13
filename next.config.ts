@@ -31,6 +31,10 @@ const securityHeaders = [
 
 const nextConfig: NextConfig = {
   poweredByHeader: false,
+  // The dev server is also opened as 127.0.0.1; without this Next treats that
+  // host as cross-origin and blocks its own dev resources, which silently
+  // prevents client hydration.
+  allowedDevOrigins: ["127.0.0.1"],
   async headers() {
     return [
       {
