@@ -1,0 +1,52 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>DriverCompass — logo proof sheet</title>
+<style>
+  :root { --ink:#0A1A2A; --paper:#F6F5F1; --amber:#E8A33D; }
+  body { margin:0; padding:40px; background:var(--paper); color:var(--ink);
+         font:14px/1.5 ui-sans-serif, system-ui, sans-serif; }
+  h2 { font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:#61707F; margin:40px 0 14px; font-weight:600; }
+  .row { display:flex; gap:36px; align-items:center; flex-wrap:wrap; }
+  .panel { background:#fff; border:1px solid #E2E5E1; border-radius:16px; padding:28px 32px; }
+  .dark { background:var(--ink); border-radius:16px; padding:28px 32px; }
+  .col { display:flex; flex-direction:column; gap:14px; align-items:flex-start; }
+  .app { display:flex; gap:18px; align-items:flex-end; }
+  .app img { border-radius:22%; box-shadow:0 10px 30px -18px rgba(10,26,42,.5); }
+  .mono { filter:none; }
+  small { color:#61707F; }
+</style>
+
+<h2>Primary lockup</h2>
+<div class="row">
+  <div class="panel"><img src="logo-primary.svg" height="32" alt=""></div>
+  <div class="dark"><img src="logo-primary-inverse.svg" height="32" alt=""></div>
+  <div class="panel"><img src="logo-stacked.svg" height="64" alt=""></div>
+</div>
+
+<h2>Mark alone — light, inverse, mono</h2>
+<div class="row">
+  <div class="panel"><div class="col">
+    <img src="mark.svg" width="96" alt="">
+    <div class="row"><img src="mark.svg" width="32" alt=""><img src="mark.svg" width="16" alt=""></div>
+  </div></div>
+  <div class="dark"><div class="col">
+    <img src="mark-inverse.svg" width="96" alt="">
+    <div class="row"><img src="mark-inverse.svg" width="32" alt=""><img src="mark-inverse.svg" width="16" alt=""></div>
+  </div></div>
+  <div class="panel"><div class="col">
+    <span style="color:#0A1A2A"><img src="mark-mono.svg" width="96" alt="" style="filter:brightness(0)"></span>
+    <small>monochrome, single colour</small>
+  </div></div>
+</div>
+
+<h2>App icon, favicon, avatar</h2>
+<div class="row">
+  <div class="app">
+    <img src="icon-512.png" width="128" alt="">
+    <img src="icon-192.png" width="64" alt="">
+    <img src="apple-touch-icon.png" width="48" alt="">
+    <img src="favicon-32.png" width="32" alt="">
+    <img src="favicon-16.png" width="16" alt="">
+  </div>
+  <img src="avatar.svg" width="96" alt="" style="border-radius:50%">
+</div>
