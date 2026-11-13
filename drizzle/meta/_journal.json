@@ -1,0 +1,27 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1794505905496,
+      "tag": "0000_crazy_norrin_radd",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1794514970755,
+      "tag": "0001_t002d_trust_stabilization",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1794536459142,
+      "tag": "0002_normal_angel",
+      "breakpoints": true
+    }
+  ]
+}

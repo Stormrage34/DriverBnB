@@ -1,0 +1,31 @@
+# Dependencies
+node_modules
+
+# Next.js build output
+.next
+out
+build
+
+# Environment files — never commit real values
+.env
+.env.local
+.env.*.local
+!.env.example
+
+# Logs and OS files
+*.log
+.DS_Store
+
+# Generated type declarations
+next-env.d.ts
+
+# TypeScript / test caches
+tsconfig.tsbuildinfo
+coverage
+.vitest
+.worktrees/
+
+# Tool/build artefacts (next dev agent files, taste-skill gate state)
+.agents/
+.taste-skill/
+skills-lock.json

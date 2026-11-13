@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>DriverCompass — Driver Reviews concept</title>
+<style>
+  :root{
+    --ink:#0A1A2A; --ink-soft:#2C3F52; --muted:#61707F; --paper:#F6F5F1; --surface:#fff;
+    --line:#E2E5E1; --line-strong:#CFD6D2; --brand:#0B2B45; --accent:#E8A33D;
+    --success:#16705A; --success-soft:#E2F2EC; --warning:#A8640D; --warning-soft:#FDF1DC;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.6 Geist,ui-sans-serif,system-ui,sans-serif}
+  .note{background:var(--ink);color:#fff;font-size:13px;padding:10px 24px;text-align:center}
+  .wrap{max-width:1280px;margin:0 auto;padding:56px 32px}
+  h1{font-size:40px;line-height:1.08;letter-spacing:-.03em;margin:0 0 12px;font-weight:500}
+  h2{font-size:28px;line-height:1.15;letter-spacing:-.02em;margin:0 0 8px;font-weight:500}
+  h3{font-size:18px;margin:0;font-weight:500}
+  p{margin:0 0 12px}
+  .lead{color:var(--ink-soft);max-width:62ch}
+  .grid{display:grid;gap:24px}
+  .cols{grid-template-columns:minmax(0,1fr) 360px}
+  section{margin-bottom:72px}
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:24px}
+  .muted{color:var(--muted);font-size:14px}
+  .pill{display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:4px 10px;font-size:12px;font-weight:500}
+  .ok{background:var(--success-soft);color:var(--success)}
+  .unv{background:var(--warning-soft);color:var(--warning)}
+  .claim{background:#EEF2F6;color:var(--brand)}
+  .score{font-size:48px;line-height:1;letter-spacing:-.03em;font-weight:500}
+  .bar{height:6px;border-radius:999px;background:var(--line);overflow:hidden;margin:6px 0 0}
+  .bar > span{display:block;height:100%;background:var(--brand)}
+  .bar.amber > span{background:var(--accent)}
+  .rows{display:grid;gap:14px}
+  .row{display:grid;grid-template-columns:180px 1fr 48px;gap:12px;align-items:center;font-size:14px}
+  .review{border-top:1px solid var(--line);padding-top:16px;margin-top:16px}
+  .review:first-of-type{border-top:0;margin-top:0;padding-top:0}
+  .meta{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:12px;color:var(--muted);margin:6px 0 10px}
+  .quote{color:var(--ink-soft);font-size:15px;margin:0 0 10px}
+  .reply{background:var(--paper);border-left:2px solid var(--line-strong);padding:10px 14px;border-radius:0 8px 8px 0;font-size:14px;color:var(--ink-soft)}
+  .filters{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 0}
+  .chip{border:1px solid var(--line-strong);border-radius:999px;padding:4px 12px;font-size:13px;background:var(--surface);color:var(--ink-soft)}
+  .chip[aria-pressed="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+  .stmt{font-size:26px;line-height:1.2;letter-spacing:-.02em;font-weight:500;max-width:24ch}
+  .legend{display:grid;gap:8px;font-size:13px;color:var(--ink-soft)}
+</style>
+</head>
+<body>
+<div class="note">Design concept — illustrative data, not the live product</div>
+
+<div class="wrap">
+  <section>
+    <p class="muted">Employer profile · section concept</p>
+    <h1>What drivers say about this employer</h1>
+    <p class="lead">Every review is written by a driver who says they worked there. The platform either confirms that employment or it does not, and every review says which. The employer can reply; the reply is never counted as a review.</p>
+
+    <div class="grid cols" style="margin-top:28px">
+      <div class="card">
+        <div style="display:flex;gap:32px;align-items:flex-end;flex-wrap:wrap">
+          <div>
+            <div class="score">76%</div>
+            <p style="margin:4px 0 0;font-size:14px"><strong>of 34 drivers with verified experience</strong> would recommend this employer</p>
+            <p class="muted" style="margin:6px 0 0">Score basis: confirmed employment only. 7 further reviews are not verified and never enter the score.</p>
+          </div>
+          <div>
+            <div style="font-size:28px;font-weight:500;letter-spacing:-.02em">41</div>
+            <p class="muted" style="margin:4px 0 0">reviews in total<br>34 verified · 7 not verified</p>
+          </div>
+        </div>
+        <div class="filters" role="group" aria-label="Filter reviews">
+          <span class="muted" style="align-self:center;margin-right:4px">Filter reviews</span>
+          <button class="chip" aria-pressed="true">All 41</button>
+          <button class="chip">Verified 34</button>
+          <button class="chip">Directly employed</button>
+          <button class="chip">Agency</button>
+          <button class="chip">Netherlands</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3 style="margin-bottom:12px">What the score means</h3>
+        <div class="legend">
+          <div><span class="pill ok">Verified experience</span> employment confirmed from platform records</div>
+          <div><span class="pill unv">Not verified</span> submitted by a driver, employment not confirmed</div>
+          <div><span class="pill claim">Company reply</span> the employer's own statement, never counted as a review</div>
+          <p class="muted" style="margin:8px 0 0">No review can be bought, hidden or reordered by paying. Employers cannot ask for a review to be removed; they can reply or report it.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid" style="grid-template-columns:minmax(0,1fr) 360px;margin-top:24px">
+      <div class="card">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px">
+          <h3>Conditions drivers rated</h3>
+          <span class="muted">average, scale 1–5</span>
+        </div>
+        <div class="muted" style="display:flex;justify-content:space-between;font-size:11px;margin:10px 0 -6px;padding-left:192px;padding-right:60px"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span></div>
+        <div class="rows">
+          <div class="row"><span>Pay reliability</span><div class="bar"><span style="width:88%"></span></div><span class="muted">4.4</span></div>
+          <div class="row"><span>Advertised vs actual</span><div class="bar"><span style="width:74%"></span></div><span class="muted">3.7</span></div>
+          <div class="row"><span>Rotation and home time</span><div class="bar"><span style="width:70%"></span></div><span class="muted">3.5</span></div>
+          <div class="row"><span>Equipment and maintenance</span><div class="bar"><span style="width:82%"></span></div><span class="muted">4.1</span></div>
+          <div class="row"><span>Accommodation</span><div class="bar"><span style="width:64%"></span></div><span class="muted">3.2</span></div>
+          <div class="row"><span>Management and communication</span><div class="bar"><span style="width:58%"></span></div><span class="muted">2.9</span></div>
+          <div class="row"><span>Contracts and administration</span><div class="bar"><span style="width:76%"></span></div><span class="muted">3.8</span></div>
+          <div class="row"><span>Safety and professionalism</span><div class="bar"><span style="width:86%"></span></div><span class="muted">4.3</span></div>
+        </div>
+        <p class="muted" style="margin:16px 0 0">A category only appears when enough drivers rated it. Drivers who did not experience something leave it blank.</p>
+      </div>
+
+      <div class="card">
+        <div class="review">
+          <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+            <span class="pill ok">Verified experience</span>
+            <span class="pill" style="background:var(--paper);color:var(--ink-soft)">Directly employed</span>
+          </div>
+          <p class="muted" style="margin:10px 0 0;font-size:12px;text-transform:uppercase;letter-spacing:.12em">Driver review</p>
+          <div class="meta"><span>March 2024 – February 2026</span><span>International C+E</span><span>NL–DE lanes</span></div>
+          <p class="quote">"The truck and the money were as described. Home time was the part that slipped: two of my four weeks off were cut short, and nobody warned me before the trip started."</p>
+          <div class="reply"><strong>Company reply</strong> · 12 March 2026<br>Home time is planned at the start of each rotation; when a customer moves a collection we inform the driver the same day. We have changed the planning rule for the NL–DE lanes this year.</div>
+          <p class="muted" style="margin:10px 0 0">Ratings: pay 5 · advertised vs actual 4 · rotation 2 · equipment 5</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:24px">
+      <div class="review">
+        <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+          <span class="pill unv">Not verified</span>
+          <span class="pill" style="background:var(--paper);color:var(--ink-soft)">Agency placement</span>
+        </div>
+        <p class="muted" style="margin:10px 0 0;font-size:12px;text-transform:uppercase;letter-spacing:.12em">Driver review</p>
+        <div class="meta"><span>June 2025 – August 2025</span><span>Distribution</span><span>Bremen</span></div>
+        <p class="quote">"Night work was regular, which suited me. The agency contract was explained, but the handover between agency and depot took three weeks to sort out."</p>
+        <p class="muted" style="margin:10px 0 0">This driver's employment is not confirmed by the platform. It is shown, labelled, and never counted as verified.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <p class="muted">Driver profile · optional section</p>
+    <h2>My experience</h2>
+    <p class="lead">A driver chooses whether to show any of this, and which experiences to display. Nothing is published automatically, and hiding the profile never removes a review of an employer.</p>
+
+    <div class="grid cols" style="margin-top:24px">
+      <div class="card">
+        <div style="display:flex;justify-content:space-between;gap:16px;align-items:center;flex-wrap:wrap">
+          <h3>Shown on my profile</h3>
+          <span class="pill ok">Visible to employers I contact</span>
+        </div>
+        <div class="review">
+          <div class="meta"><span>Rheinland Transport</span><span>2024 – 2026</span><span>International C+E</span></div>
+          <p class="quote">"Four years on international lanes, mostly NL–DE. I would work there again for the equipment and the pay; the planning is where it lost me."</p>
+          <p class="muted" style="margin:0">Shown as a recommendation on my profile · edit · remove from profile</p>
+        </div>
+        <div class="review">
+          <div class="meta"><span>Nordwärts Logistik</span><span>2022 – 2023</span><span>Tanker, ADR</span></div>
+          <p class="quote">"ADR training was paid and the rotation was honest. I left for a shorter commute, not because of the company."</p>
+          <p class="muted" style="margin:0">Hidden from my profile · show · edit</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3 style="margin-bottom:12px">The rules</h3>
+        <div class="legend">
+          <div>· Private by default; nothing appears until the driver selects it</div>
+          <div>· Any experience can be shown or hidden at any time</div>
+          <div>· Hiding a profile does not delete the employer review</div>
+          <div>· Employment documents are never published</div>
+          <div>· Employers cannot pay to be recommended</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="margin-bottom:0">
+    <div class="grid" style="grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center">
+      <div>
+        <h2>Don't just read the job offer. Hear from the drivers.</h2>
+        <p class="lead">Find out what other professional drivers say about the companies they have worked for. Compare experiences, understand working conditions, and make your next move with greater confidence.</p>
+        <p><strong>Real drivers. Real experiences. Better employment decisions.</strong></p>
+      </div>
+      <div class="card">
+        <p class="stmt">A score you can check, not a badge you can buy.</p>
+      </div>
+    </div>
+  </section>
+</div>
+</body>
+</html>
